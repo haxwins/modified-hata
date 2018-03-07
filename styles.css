@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+body{
+  background-color: #74AFAD;
+  font-family: "PT Sans";
+}
+.container{
+  width: 900px;
+  margin: auto;
+}
+main{
+  color:#ECECEA;
+  background-color: #558C89;
+}
+form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+form > :first-child{
+  font-size: 30px;
+}
+input{
+  background-color: white;
+  margin-right: 5px;
+  padding:5px;
+}
+.row{
+    display: table-row;
+}
+.cell{
+    display: table-cell;
+    padding: 0 5px 0 5px;
+}
+select{
+  margin-left : 20%;
+}
+#calc{
+  color:black;
+  display: block;
+  padding:5px 10px 5px 10px;
+  background-color: #ECECEA;
+  margin: 20px 0 20px 0;
+  cursor:pointer;
+}
+.results{
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.results div:first-child{
+  font-size: 50px;
+  margin-bottom:40px;
+}
+footer{
+
+}
