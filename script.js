@@ -33,15 +33,15 @@ const caseTwo = (data) =>{    //case 2 when d >= 0.1km
     alpha = 1+ (0.14 + 1.87e-4 * data.fre + 1.07e-3*data.hb)*Math.pow(Math.log10(data.d/20),0.9);
   }
   //subcases
-  if(data.env == 'urban'){  //1
+  if(data.env == 'urban'){  //subcase 1
     l = caseTwoSubCaseOne(data);
     return Math.round(l*1000)/1000;
   }
-  else if(data.env == 'suburban'){  //2
+  else if(data.env == 'suburban'){  //subcase 2
     l = caseTwoSubCaseOne(data) - 2;
     return Math.round(l*1000)/1000;
   }
-  else if(data.env == 'openarea'){  //3
+  else if(data.env == 'openarea'){  //subcase 3
     l = caseTwoSubCaseOne(data) - 4;
     return Math.round(l*1000)/1000;
   }
