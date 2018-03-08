@@ -97,5 +97,15 @@ const calculate = ()=>{
     elements[0].innerHTML = 'L = ' + l + ' dB';
   }
 }
+const check = ()=>{
+  if(document.querySelector('#d').value<=40){
+    document.querySelector("#env").disabled = true;
+  }
+  else{
+    document.querySelector("#env").disabled = false;
+  }
+}
   document.querySelector("#calc").addEventListener('click',calculate);
+  document.querySelector("#d").addEventListener('focusout',check);
+
 }
