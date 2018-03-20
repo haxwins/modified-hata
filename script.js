@@ -15,25 +15,24 @@ const caseOne = (data) =>{    //case 1 when d <= 0.4km
   return Math.round(l*1000)/1000;
 }
 const caseTwoSubCaseOne = (data,alpha,a,b)=>{
-  let endeq=13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b;
+	console.log(69.6 + 26.2 * Math.log10(150) - 20 * Math.log10(150/data.fre) -  13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b);
   if(data.fre<=150){
-    console.log(69.6 + 26.2 * Math.log10(150) - 20 * Math.log10(150/data.fre) -  endeq)
-    return 69.6 + 26.2 * Math.log10(150) - 20 * Math.log10(150/data.fre) -  endeq;
+    return 69.6 + 26.2 * Math.log10(150) - 20 * Math.log10(150/data.fre) -  13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b;
   }
   else if(data.fre<=1500){
-    return 69.6 + 26.2 * Math.log10(data.fre) - endeq;
+    return 69.6 + 26.2 * Math.log10(data.fre) - 13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b;
   }
   else if(data.fre<=2000){
-    return 46.3 + 33.9 * Math.log10(data.fre) - endeq;
+    return 46.3 + 33.9 * Math.log10(data.fre) - 13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b;
   }
   else{
-    return 46.3 + 33.9 * Math.log10(2000) + 10 * Math.log10(data.fre/2000) - endeq;
+    return 46.3 + 33.9 * Math.log10(2000) + 10 * Math.log10(data.fre/2000) - 13.82 *  Math.log10(Math.max(30,data.hb)) + (44.0-6.55*Math.log10(Math.max(30,data.hb)))*Math.log10(Math.pow(data.d,alpha))-a-b;
   }
 }
 const caseTwo = (data) =>{    //case 2 when d >= 0.1km
   //a,b and alpha
-  let a=(1.1 * Math.log10(data.fre)-7)*Math.min(10,data.hm)-(1.56*Math.log10(data.fre)-0.8) + Math.max(0,20*Math.log10(data.hm/10));
-  let b=Math.min(0,20*Math.log10(data.hb/30));
+  let a=(1.1 * Math.log10(data.fre)-0.7)*Math.min(10,data.hm)-(1.56*Math.log10(data.fre)-0.8) + Math.max(0,(20*Math.log10(data.hm/10)));
+  let b=Math.min(0,(20*Math.log10(data.hb/30)));
   let alpha;
   let l;
   if(data.d<20){alpha = 1;}
